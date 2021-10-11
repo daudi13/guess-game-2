@@ -1,5 +1,9 @@
 'use strict';
 
-const message = document.querySelector('.message').textContent;
+const message = document.querySelector('.message');
+const score = document.querySelector('.score');
+const number = document.querySelector('.number');
 
-console.log(message);
+message.textContent = 'correct Number!';
+score.textContent = 40;
+number.textContent = 22;
