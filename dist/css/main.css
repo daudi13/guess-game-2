@@ -98,6 +98,7 @@ body main .left #guess {
   width: 25rem;
   text-align: center;
   display: block;
+  color: #fff;
   margin-bottom: 3rem;
 }
 
