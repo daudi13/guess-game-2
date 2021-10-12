@@ -2,10 +2,10 @@
 
 const message = document.querySelector('.message');
 const score = document.querySelector('.score');
-const number = document.querySelector('.number');
 const data = document.getElementById('guess');
 
-const number = Math.trunc(Math.random() * 20) + 1;
+const secretNumber = Math.trunc(Math.random() * 20) + 1;
+document.querySelector('.number').textContent = secretNumber;
 
 buttonCheck.addEventListener('click', function () {
     const guess = Number(document.getElementById('guess').value);
@@ -13,5 +13,7 @@ buttonCheck.addEventListener('click', function () {
     
     if (!guess) {
         message.textContent = 'enter input!!'
+    } else if (guess === secretNumber) {
+        
     }
-})
+
