@@ -1,12 +1,11 @@
 'use strict';
 
 const message = document.querySelector('.message');
-const score = document.querySelector('.score');
 const data = document.getElementById('guess');
 const buttonCheck = document.querySelector('.check');
 
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
-document.querySelector('.number').textContent = secretNumber;
+let score = 20
 
 buttonCheck.addEventListener('click', function () {
     const guess = Number(document.getElementById('guess').value);
@@ -17,7 +16,14 @@ buttonCheck.addEventListener('click', function () {
     } else if (guess === secretNumber) {
         message.textContent = `Correct Number!`;
     } else if (guess !== secretNumber) {
-        message.textContent = `Try again`;
+        score--;
+        document.querySelector('.score').textContent = score;
+
+        if (guess > secretNumber) {
+            message.textContent = `too high`;
+        } else if (guess < secretNumber) {
+            message.textContent = `too low`;
+        }
     }
 
 });
