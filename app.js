@@ -5,12 +5,7 @@ const score = document.querySelector('.score');
 const number = document.querySelector('.number');
 const data = document.getElementById('guess');
 
-const buttonCheck = document.querySelector('.check')
-
-
-message.textContent = 'correct Number!';
-score.textContent = 40;
-number.textContent = 2;
+const number = Math.trunc(Math.random() * 20) + 1;
 
 buttonCheck.addEventListener('click', function () {
     const guess = Number(document.getElementById('guess').value);
