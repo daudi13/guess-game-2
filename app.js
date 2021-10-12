@@ -5,9 +5,11 @@ const data = document.getElementById('guess');
 const buttonCheck = document.querySelector('.check');
 const theScore = document.querySelector('.score');
 const theNumbre = document.querySelector('.number');
+const theHighscore = document.querySelector('.highscore');
 
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
+let highScore = 0;
 
 buttonCheck.addEventListener('click', function () {
     const guess = Number(document.getElementById('guess').value);
@@ -20,6 +22,11 @@ buttonCheck.addEventListener('click', function () {
         theScore.textContent = score;
         message.textContent = `Correct Number!`;
         theNumbre.textContent = secretNumber;
+
+        //adding up the  cumulative highscore
+
+        highScore = highScore + 5;
+        theHighscore.textContent = highScore;
 
     } else if (guess !== secretNumber) {
         score--;
