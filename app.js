@@ -30,8 +30,15 @@ buttonCheck.addEventListener('click', function () {
 
         //adding up the  cumulative highscore
 
-        highScore = highScore + 5;
+        /*
+        highScore = highScore + score;
         theHighscore.textContent = highScore;
+        */
+        
+        if (score > highScore) {
+            highScore = score
+            theHighscore.textContent = highScore;
+        }
 
     } else if (guess !== secretNumber) {
         score--;
@@ -42,6 +49,11 @@ buttonCheck.addEventListener('click', function () {
         } else if (guess < secretNumber) {
             message.textContent = `too low`;
         }
+    }
+
+    if (score < 1) {
+        message.textContent = 'you lost';
+        score = 0;
     }
 
 });
@@ -66,4 +78,7 @@ buttonAgain.addEventListener('click', function () {
     secretNumber = Math.trunc(Math.random() * 20) + 1;
     theNumbre.textContent = `?`;
 
-})
+    //resetting the width of the  
+    theNumbre.style.width = '15rem'
+
+});
