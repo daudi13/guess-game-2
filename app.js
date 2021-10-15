@@ -9,6 +9,7 @@ const buttonCheck = document.querySelector('.check');
 const buttonAgain = document.querySelector('.again');
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
+
 let score = 20;
 let highScore = 0;
 
@@ -81,4 +82,4 @@ buttonAgain.addEventListener('click', function () {
     //resetting the width of the  
     theNumbre.style.width = '15rem'
 
-});
+}); 
