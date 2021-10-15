@@ -30,7 +30,7 @@ buttonCheck.addEventListener('click', function () {
         if (score > highscore) {
             highscore = score;
             theHighscore.innerHTML = highscore;
-        } 
+        }
     } else if (guess !== secretNumber) {
         score--;
         theScore.innerHTML = score;
@@ -43,5 +43,15 @@ buttonCheck.addEventListener('click', function () {
     }
 
     console.log(secretNumber);
+});
+
+buttonAgain.addEventListener('click', function () {
+    theMessage.innerHTML = `start Guessing...`;
+    score = 20;
+    theScore.innerHTML = score
+    numbre.innerHTML = `?`;
+    document.querySelector('input').value = ``;
 })
+
+
 
