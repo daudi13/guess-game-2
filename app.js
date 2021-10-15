@@ -7,6 +7,8 @@ const theNumbre = document.querySelector('.number');
 const theHighscore = document.querySelector('.highscore');
 const buttonCheck = document.querySelector('.check');
 const buttonAgain = document.querySelector('.again');
+const victory = document.getElementById('victory');
+const wrong = document.getElementById('wrong');
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
