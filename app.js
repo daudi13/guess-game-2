@@ -22,11 +22,12 @@ buttonCheck.addEventListener('click', function () {
     if (!guess) {
         message.textContent = 'enter input!!'
     } else if (guess === secretNumber) {
-        score++;
+        // score++;
         theScore.textContent = score;
         message.textContent = `Correct Number!`;
         document.querySelector('body').style.backgroundColor = 'green';
         theNumbre.style.width = '30rem';
+        victory.play();
 
         //unveiling the answer;
         theNumbre.textContent = secretNumber;
@@ -46,6 +47,7 @@ buttonCheck.addEventListener('click', function () {
     } else if (guess !== secretNumber) {
         score--;
         theScore.textContent = score;
+        wrong.play();
 
         if (guess > secretNumber) {
             message.textContent = `too high`;
