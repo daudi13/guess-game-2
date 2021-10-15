@@ -8,7 +8,7 @@ const theMessage = document.querySelector('.message');
 const theScore = document.querySelector('.score');
 const theHighscore = document.querySelector('.highscore');
 const buttonCheck = document.querySelector('.check');
-const body = document.querySelector('body')
+const body = document.querySelector('body');
 
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -20,24 +20,24 @@ buttonCheck.addEventListener('click', function () {
     const guess = Number(document.querySelector('input').value);
 
     if (!guess) {
-        theMessage.innerHTML = 'Input value';
+        displayMessage(theMessage, 'Input value');
     } else if (guess === secretNumber) {
-        theMessage.innerHTML = `You guessed right!`;
-        numbre.innerHTML = secretNumber;
+        displayMessage(theMessage, `You guessed right!`);
+        displayMessage(numbre, secretNumber);
         body.style.backgroundColor = `green`;
         numbre.style.width = `30rem`
 
         if (score > highscore) {
             highscore = score;
-            theHighscore.innerHTML = highscore;
+            displayMessage(theHighscore, highscore);
         }
     } else if (guess !== secretNumber) {
         score--;
         theScore.innerHTML = score;
         if (score > 1) {
-            guess > secretNumber ? theMessage.innerHTML = `too high` : theMessage.innerHTML = `too low`;
+            guess > secretNumber ? displayMessage(theMessage, `too high`) : displayMessage(theMessage, `too low`);
         } else {
-            theMessage.innerHTML = `You lost try again`;
+        displayMessage(theMessage, `You lost try again`);
             theScore.textContent = 0;
         }
     }
@@ -54,4 +54,6 @@ buttonAgain.addEventListener('click', function () {
 })
 
 
-
+function displayMessage(element, message) {
+    return element.innerHTML = message;
+}
