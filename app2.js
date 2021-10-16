@@ -55,9 +55,10 @@ buttonAgain.addEventListener('click', function () {
     theScore.innerHTML = score
     numbre.innerHTML = `?`;
     document.querySelector('input').value = ``;
+    body.style.backgroundColor = '#222';
 })
 
 
 function displayMessage(element, message) {
     return element.innerHTML = message;
-}
+};
