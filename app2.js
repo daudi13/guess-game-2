@@ -9,6 +9,8 @@ const theScore = document.querySelector('.score');
 const theHighscore = document.querySelector('.highscore');
 const buttonCheck = document.querySelector('.check');
 const body = document.querySelector('body');
+const victory = document.getElementById('victory');
+const wrong = document.getElementById('wrong');
 
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -29,11 +31,13 @@ buttonCheck.addEventListener('click', function () {
 
         if (score > highscore) {
             highscore = score;
+            victory.play();
             displayMessage(theHighscore, highscore);
         }
     } else if (guess !== secretNumber) {
         score--;
         theScore.innerHTML = score;
+        wrong.play()
         if (score > 1) {
             guess > secretNumber ? displayMessage(theMessage, `too high`) : displayMessage(theMessage, `too low`);
         } else {
