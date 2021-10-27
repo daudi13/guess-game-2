@@ -6,7 +6,7 @@ const btnCheck = document.querySelector('.check');
 const theMessage = document.querySelector('.message');
 const theScore = document.querySelector('.score');
 const theHighscore = document.querySelector('.highscore');
-const btnAgain = document.querySelector('highscore');
+const btnAgain = document.querySelector('.again');
 const body = document.querySelector('body');
 const victory = document.getElementById('victory');
 const wrong = document.getElementById('wrong');
@@ -44,4 +44,16 @@ btnCheck.addEventListener('click', function () {
     }
 
     console.log(randomNumber);
+});
+
+btnAgain.addEventListener('click', function () {
+    randomNumber = Math.trunc(Math.random() * 20) + 1;
+    score = 20;
+    theMessage.innerHTML = `Start guessing`;
+    theScore.innerHTML = score;
+    body.style.backgroundColor = '#333';
+    theNumber.style.width = '15rem'
+    theNumber.innerHTML = '?';
+    theInput.value = '';
+    
 })
