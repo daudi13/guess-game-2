@@ -13,6 +13,7 @@ const wrong = document.getElementById('wrong');
 
 let randomNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
+let highscore = 0;
 
 
 btnCheck.addEventListener('click', function () {
@@ -25,11 +26,22 @@ btnCheck.addEventListener('click', function () {
         body.style.backgroundColor = `#31f300`;
         theNumber.style.width = `30rem`;
         victory.play();
+        if (score > highscore) {
+            highscore += score;
+            theHighscore.innerHTML = highscore;
+        }
     } else if (guess !== randomNumber) {
         score--
         theScore.innerHTML = score;
         wrong.play();
 
-        guess > 1 ? theMessage.innerHTML = `too high` : theMessage.innerHTML = `too low`;
+        if (guess > 1) {
+            guess > randomNumber ? theMessage.innerHTML = `too high` : theMessage.innerHTML = `too low`;
+        } else {
+            theMessage.innerHTML = 'you lost try again';
+            theScore.innerHTML = 0;
+        }
     }
+
+    console.log(randomNumber);
 })
